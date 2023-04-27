@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="contianer d-flex d-flex-column justify-content-center mt-5">
+    {% block title %} <h1>New Task</h1> {% endblock %}
+</div>
+<div class="contianer mb-3">
+    <form class="" action="" method="post">
+        {% csrf_token %}
+        <button typoe="submit" class="btn btn-primary" name="add">Add</button>
+    </form>
+</div>
+{% endblock %}
