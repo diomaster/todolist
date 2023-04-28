@@ -12,7 +12,12 @@
         <div class="container card mb-3">
             <p>{{ list.id }} <span style="color:blue;">{{ list.title }}</span></p>
             <p>{{ list.details }}</p>
-            <p><span style="color:blue;">Date Created:</span> {{ list.date }}</p>
+            <p><span style="color:blue;">Due Date:</span> {{ list.date }}</p>
+            <p><span style="color:red;">Type of Task:</span> {{ list.type }}</p>
+            <div class="contianer">
+                <a  href="{% url 'todo:update' list.id%}" class="btn btn-success">Update Task</a>
+                <a  href="{% url 'todo:delete' list.id%}" class="btn btn-danger">Delete Task</a>
+            </div>
         </div>
         {% empty %}
         <h4>Hit the Button to create a list</h4>
@@ -20,7 +25,7 @@
     </div>
 </div>
 <div class="contianer">
-    <a class="btn btn-primary" href="{% url 'add' %}">New Task</a>
-    <a class="btn btn-success" href="{% url 'update' list.id%}">Update Task</a>
+    <a  href="{% url 'todo:add' %}" class="btn btn-primary">New Task</a>
+   
 </div>
 {% endblock %}

@@ -22,5 +22,5 @@ from todo import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-   # path('todolist/', include('todolist.urls')),
+    path('todo/', include('todo.urls')),
 ]
